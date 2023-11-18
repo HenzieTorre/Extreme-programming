@@ -1,5 +1,11 @@
+var name;
+var pass1;
+var sh;
+var phone;
+var mail;
+
 function checkname() {
-    var name = document.getElementById("name").value;
+    name = document.getElementById("name").value;
     var reg = /^[\u4e00-\u9fa5a-zA-Z]{2,4}$/;
     if(name==''){ 
         document.getElementById("cw").style.backgroundImage=" url(image/im1.png)";
@@ -26,7 +32,7 @@ function checkname() {
  
 }
 function checkpass() {
-    var pass1 = document.getElementById("pass1").value;
+    pass1 = document.getElementById("pass1").value;
     var reg = /^[0-9a-zA-Z]{6,12}$/;
  
     if (reg.test(pass1)) {
@@ -43,7 +49,6 @@ function checkpass() {
  
 }
 function checkpassw() {
-    var pass1 = document.getElementById("pass1").value;
     var pass2 = document.getElementById("pass2").value;
     if (pass2==pass1&&pass2!='') {
         document.getElementById("jc2").innerHTML="<img src='im2.png'/>";
@@ -77,7 +82,7 @@ function createCity(){
 }  
 function createschool(){  
     var index = document.getElementById("city").selectedIndex;   
-    var sh = document.getElementById("school");  
+    sh = document.getElementById("school");
     sh.options.length=0;   
     for(var i in school[index]){  
         var op = new Option(school[index][i],school[index][i]);  
@@ -86,7 +91,7 @@ function createschool(){
 } 
  
 function checkphone() {
-    var phone = document.getElementById("phone").value;
+    phone = document.getElementById("phone").value;
     var reg = /^1[3578]\d{9}$/;
     if(phone!=''){
          if (reg.test(phone)) {
@@ -109,7 +114,7 @@ function checkphone() {
     }
 }
 function checkmail() {
-    var mail= document.getElementById("mail").value;
+    mail= document.getElementById("mail").value;
     var reg = /^\w{1,}@\w{1,}(.\w{1,}){1,}$/;
     if(mail!=''){
          if (reg.test(mail)) {
@@ -140,10 +145,20 @@ function check(){
     var a=['日','一','二','三','四','五','六'];
     var str="现在是："+hour+":"+minute+":"+second+",星期"+a[week];
     if( checkname()==true&&checkpass()==true&&checkpassw()==true&&checkphone()==true&&checkmail()==true){
-        alert(str+"注册成功!");
+
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function (){
+            if (this.readyState === 4 && this.status === 200){
+            }
+            else {
+                alert(this.status);
+            }
+        }
+        xhr.open("GET","/Index/IndexServlet?username="+name+"&userpassword="+pass1+"&school="+sh+"&phone="+phone+"&mail="+mail,true);
+        xhr.send();
+
         location.href="../登录界面/login.html";
     }else{
-        alert("注册失败！");
         return false;
     }
 }

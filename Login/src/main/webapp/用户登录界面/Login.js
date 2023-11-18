@@ -1,4 +1,6 @@
 var code;
+var name;
+var pass;
 function change(){
     var arrays=new Array(
     '1','2','3','4','5','6','7','8','9','0',
@@ -35,7 +37,7 @@ function check(){
 }  
  
 function checkname() {
-    var name = document.getElementById("username").value;
+    name = document.getElementById("username").value;
     var reg = /^[\u4e00-\u9fa5a-zA-Z]{2,4}$/;
     if(name==''){ 
         document.getElementById("cw").className="wrong";
@@ -54,7 +56,7 @@ function checkname() {
     }
 }
 function checkpass() {
-    var pass = document.getElementById("password").value;
+    pass = document.getElementById("password").value;
     var reg = /^[0-9a-zA-Z]{6,12}$/;
     if(pass==''){ 
         document.getElementById("cw1").className="wrong";
@@ -81,10 +83,20 @@ function checkall(){
     var a=['日','一','二','三','四','五','六'];
     var str="现在是："+hour+":"+minute+":"+second+",星期"+a[week];
     if(checkname()==true&&checkpass()==true&&check()==true){
-        alert(str+"，登录成功！");
+
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function (){
+            if (this.readyState === 4 && this.status === 200){
+            }
+            else {
+                alert(this.status);
+            }
+        }
+        xhr.open("GET","/Login/LoginServlet?username="+name+"&userpassword="+pass,true);
+        xhr.send();
+
         location.href="../主页面/main2.html";
     }else{
-        alert("登录失败！");
         return false;
     }
    
