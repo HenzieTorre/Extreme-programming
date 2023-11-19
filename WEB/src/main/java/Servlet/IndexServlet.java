@@ -16,10 +16,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 
-/**
- * @author: 缪锦康
- * @date 2022/9/20 15:05
- */
+
 @WebServlet("/registerServlet")
 public class IndexServlet extends HttpServlet {
     @Override
