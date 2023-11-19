@@ -14,77 +14,12 @@ body {
 .container {
     height: 100vh;
     width: 100vw;
-
-    /* display: grid; */
     place-items: center;
     position: relative;
-    background-image: linear-gradient(to bottom right, rgb(57, 92, 87), rgb(208, 200, 187));
+    background-image: linear-gradient(to bottom right, rgb(236, 236, 236), rgb(236, 236, 236));
 
 }
 
-.history ul {
-    height: 270px;
-    overflow-y: scroll;
-}
-.history ul ol {
-    text-align: right;
-    color: #53555b;
-    padding: 20px;
-}
-
-
-
-.history {
-    
-    position: absolute;
-    height: 350px;
-    width: 400px;
-    border-radius: 10px;
-    background-color: #edf2f2;
-
-    border-left: none;
-    box-shadow: 0px 0px 30px #252525;
-    left: 770px;
-    top: 105px;
-    
-    
-}
-
-#historyTitle {
-    width: 100%;
-    padding: 20px;
-    font: normal 700 30px '华文楷体';
-    
-}
-
-
-.lastAns {
-    position: absolute;
-    height: 215px;
-    width: 400px;
-    border-radius: 10px;
-    background-color: #edf2f2;
-    box-shadow: 0px 0px 30px #252525;
-    left: 770px;
-    top: 470px;
-    
-}
-
-#lastAnsTitle {
-    
-    width: 100%;
-    padding: 20px;
-    font: normal 700 30px '华文楷体';
-}
-
-#lastAnsDisplay {
-    height: 135px;
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    font: normal 700 30px '华文楷体';
-    margin: 0 auto;
-}
 
 .calculator {
     
@@ -93,7 +28,7 @@ body {
     width: auto;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 30px #252525;
+    box-shadow: 0px 0px 30px #cc0a0a;
 
     border-right: none;
     position: absolute;
@@ -155,7 +90,7 @@ body {
 }
 
 .calculator {
-    background-color: #edf2f2;
+    background-color: #ffffff;
 }
 
 .calculator button#clear {
@@ -164,7 +99,7 @@ body {
 }
 
 .calculator button.btn-equal {
-    background-color: #ffd5d8;
+    background-color: #b0cedf;
 
 }
 
@@ -173,7 +108,7 @@ body {
 }
 
 .calculator button.btn-number {
-    background-color: #978c8c;
+    background-color: #e25b5b;
 }
 
 .calculator button#cleardb {
@@ -182,22 +117,28 @@ body {
 }
 
 .calculator button#ans {
-    background-color: #ffd5d8;
+    background-color: #84ca34d2;
 }
 
-.calculator button#IR {
+.calculator button#Loan {
     background-color: #ffd5d8;
     color: #a20c0c;
 }
 
 
+ #ansbtn {
+     height: 40px;
+     width: 60px;
+     border-radius: 10px;
+     border: 0;
+     margin: 5px;
+     font-size: 15px;
+     position: absolute;
+     left: 50%;
+ }
 
-
-
-
-
-.interestRate {
-    /* 设置初始状态（不显示） */
+ .interestRate {
+  
     display: none;
 
     height: 550px;
@@ -294,57 +235,3 @@ body {
      top: 165px;
      left: 70px;
  }
-
-
-
- .alterInterestRate {
-     padding: 30px;
-     margin: 20px;
-     display: none;
- }
-
- .alterInterestRate th {
-     display: block;
-     text-align: center;
-     font-size: 35px;
-     font-family: '华文宋体';
- }
-
- .alterInterestRate table,
- .alterInterestRate td {
-     border: 1px solid black;
-     margin-left: auto;
-     margin-right: auto;
-     border-collapse: collapse;
-     width: 500px;
-     text-align: center;
-     font-size: 20px;
- }
-
- .alterInterestRate .altertitle {
-     border-collapse: initial;
- }
-
- 
-
- #ansbtn {
-     height: 40px;
-     width: 60px;
-     border-radius: 10px;
-     border: 0;
-     margin: 5px;
-     font-size: 15px;
-     position: absolute;
-     left: 50%;
- }
- #retIR {
-    height: 40px;
-    width: 60px;
-    border-radius: 10px;
-    border: 0;
-    margin: 5px;
-    font-size: 15px;
-    position: absolute;
-    left: 50%;
- }
-
