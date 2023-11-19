@@ -1,4 +1,4 @@
-* {
+ {
     padding: 0;
     margin: 0;
     /* box-sizing: border-box;
@@ -235,3 +235,158 @@ body {
      top: 165px;
      left: 70px;
  }
+
+
+ .alterInterestRate {
+    padding: 30px;
+    margin: 20px;
+    display: none;
+}
+
+.alterInterestRate th {
+    display: block;
+    text-align: center;
+    font-size: 35px;
+    font-family: '华文宋体';
+}
+
+.alterInterestRate table,
+.alterInterestRate td {
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    width: 500px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.alterInterestRate .altertitle {
+    border-collapse: initial;
+}
+
+
+
+#ansbtn {
+    height: 40px;
+    width: 60px;
+    border-radius: 10px;
+    border: 0;
+    margin: 5px;
+    font-size: 15px;
+    position: absolute;
+    left: 50%;
+}
+#retIR {
+   height: 40px;
+   width: 60px;
+   border-radius: 10px;
+   border: 0;
+   margin: 5px;
+   font-size: 15px;
+   position: absolute;
+   left: 50%;
+}
+
+
+/* 利率表格样式 */
+.alterInterestRate {
+    text-align: center;
+}
+
+.Stable, .Ltable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.Stable th, .Ltable th {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+}
+
+.Stable td, .Ltable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.Stable input, .Ltable input {
+    width: 60px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* 确定按钮和返回按钮样式 */
+#ansbtn, #retIR {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+#ansbtn:hover, #retIR:hover {
+    background-color: #45a049;
+}
+
+/* loan */
+
+
+/* 利率计算器样式 */
+.interestRate {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.interestRate h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+.both, .option, .input, #getres, #clearNum, #alter, #back {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 5px;
+}
+
+.both:hover, .option:hover, #getres:hover, #clearNum:hover, #alter:hover, #back:hover {
+    background-color: #45a049;
+}
+
+.input {
+    width: 200px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+#output {
+    width: 200px;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+/* 按钮样式 */
+#live, #storage, #loan, #dir {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+}
+
+#live:hover, #storage:hover, #loan:hover, #dir:hover {
+    background-color: #2980b9;
+}
