@@ -82,7 +82,7 @@ function checkall(){
     var str="现在是："+hour+":"+minute+":"+second+",星期"+a[week];
     if(checkname()==true&&checkpass()==true&&check()==true){
         alert(str+"，登录成功！");
-        location.href="../计算器/Calculator.html";
+        location.href="../计算器/main.html";
     }else{
         alert("登录失败！");
         return false;
