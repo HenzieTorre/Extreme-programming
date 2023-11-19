@@ -21,6 +21,6 @@
         </environment>
     </environments>
     <mappers>
-        <package name="mapper"/>
+       <package name="mapper"/>
     </mappers>
 </configuration>
