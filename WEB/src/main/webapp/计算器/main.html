@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./main.css">
+    
+
+</head>
+
+<body>
+
+        <div class="container">
+            <div class="calculator">
+    
+                <div class="display-screen">
+                    <div id="overdisplay"></div>
+                    <div id="display"></div>
+                </div>
+    
+                <div class="buttons">
+                    <table>
+                        <tr>
+                            <td><button id="Loan">Loan</button></td>
+                            <td><button class="btn-operator" id="(">(</button></td>
+                            <td><button class="btn-operator" id=")">)</button></td>
+                            <td><button class="btn-operator" id="clear">c</button></td>
+                            <td><button class="btn-operator" id="backspace">BACK</button></td>
+    
+    
+                        </tr>
+                        <tr>
+                             <td><button id="clearH">CL</button></td>
+                            <td><button class="btn-operator" id="fun1">1/x</button></td>
+                            <td><button class="btn-operator" id="fun2">^</button></td>
+                            <td><button class="btn-operator" id="fun3">√</button></td>
+                            <td><button class="btn-operator base" id="/">&divide;</button></td>
+                        </tr>
+                        <tr>
+                            <td><button id="ans">Ans</button></td>
+                            <td><button class="btn-number" id="7">7</button></td>
+                            <td><button class="btn-number" id="8">8</button></td>
+                            <td><button class="btn-number" id="9">9</button></td>
+                            <td><button class="btn-operator base" id="*">&times;</button></td>
+    
+                        </tr>
+                        <tr>
+                           <td><button class="btn-operator" id="sin">sin</button></td>
+                            <td><button class="btn-number" id="4">4</button></td>
+                            <td><button class="btn-number" id="5">5</button></td>
+                            <td><button class="btn-number" id="6">6</button></td>
+                            <td><button class="btn-operator base" id="-">-</button></td>
+    
+                        </tr>
+                        <tr>
+                            <td><button class="btn-operator" id="cos">cos</button></td>
+                            <td><button class="btn-number" id="1">1</button></td>
+                            <td><button class="btn-number" id="2">2</button></td>
+                            <td><button class="btn-number" id="3">3</button></td>
+                            <td><button class="btn-operator base" id="+">+</button></td>
+    
+                        </tr>
+                        <tr>
+                            <td><button class="btn-operator" id="tan">tan</button></td>
+                            <td><button class="btn-operator" id="reverse">±</button></td>
+                            <td><button class="btn-number" id="0">0</button></td>
+                            <td><button class="btn-operator" id=".">.</button></td>
+                            <td><button class="btn-equal" id="equal">=</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="interestRate" style="display: none;">
+            <h1>利率计算器</h1>
+            <button class="both" id="live">活期</button>
+            <div>
+                <button class="option" id="storage">存</button>
+                <button class="option" id="loan">贷</button>
+            </div>
+            <button class="both" id="dir">定期</button>
+    
+            <br />
+            <br />
+        
+            输入金额(元) <input type="text" class="input" id="money"> <br />
+            <br />
+            输入时长(月) <input type="text" class="input" id="month"> <br />
+            <br />
+            利息(元)&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" class="input" readonly="readonly" id="output"> <br />
+            <br />
+            <div>
+                <button id="getres">计算</button>
+            </div>
+            <div>
+                <button id="clearNum">清空</button>
+                <button id="alter">修改</button>
+                <button id="back">返回</button>
+        
+            </div>
+        
+        </div>
+   
+
+</body>
+<script src="main.js"></script>
+
+
+
+</html>

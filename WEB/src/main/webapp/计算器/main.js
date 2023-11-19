@@ -1,13 +1,42 @@
 const display = document.querySelector('#display');
 const buttons = document.querySelectorAll('button');
 const overdisplay = document.querySelector('#overdisplay');
+const btnLoan = document.getElementById('Loan');
 
 
+
+
+// main.js
+
+document.addEventListener('DOMContentLoaded', function () {
+    // 获取 Loan 按钮
+    var loanButton = document.getElementById('Loan');
+
+    // 获取利率计算器容器
+    var interestRateContainer = document.querySelector('.interestRate');
+
+    // 添加 Loan 按钮的点击事件处理程序
+    loanButton.addEventListener('click', function () {
+        // 隐藏原本的计算器
+        document.querySelector('.calculator').style.display = 'none';
+        // 显示利率计算器
+        interestRateContainer.style.display = 'block';
+    });
+
+    // 添加返回按钮的点击事件处理程序
+    var backButton = document.getElementById('back');
+    backButton.addEventListener('click', function () {
+        // 显示原本的计算器
+        document.querySelector('.calculator').style.display = 'block';
+        // 隐藏利率计算器
+        interestRateContainer.style.display = 'none';
+    });
+});
 
 
 
 function jg(num) {
-    // console.log(parseFloat(num.toFixed(7)));
+
     if ((num | 0) == num) return num;
     return parseFloat(num.toFixed(9));
 } 
@@ -121,4 +150,3 @@ start();
 
 
     
-
