@@ -1,0 +1,33 @@
+body{
+    background-color: rgb(233, 228, 245);
+}
+h3{
+    height: 15px;
+    text-align: center;
+    color: rgb(153, 10, 10);
+}
+#you{
+    margin-left: 35%;
+    text-align:right;
+    float:left;
+}
+#zuo{
+    margin-top: -50px;
+    margin-left: 45%;
+    text-align: left;
+    float: left;
+    width:500px;
+}
+div{
+    height: 50px;
+}
+input{
+    width:240px;
+    background-color: rgb(247, 244, 217);
+}
+#an input{
+    background-color: rgb(155, 155, 219);
+    color: rgb(238, 232, 182);
+    width: 170px;
+    border-radius: 5px;
+}
