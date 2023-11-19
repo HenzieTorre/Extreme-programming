@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mapper.UserMapper">
-  <resultMap id="BaseResultMap" type="pojo.User">
-    <result column="id" jdbcType="INTEGER" property="id" />
-    <result column="Name" jdbcType="VARCHAR" property="name" />
-    <result column="Password" jdbcType="VARCHAR" property="password" />
+<mapper namespace="mapper.MessageMapper">
+  <resultMap id="BaseResultMap" type="pojo.Message">
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="Record" jdbcType="VARCHAR" property="record" />
+    <result column="User" jdbcType="VARCHAR" property="user" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -65,15 +65,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, Name, Password
+    ID, Record, User
   </sql>
-  <select id="selectByExample" parameterType="pojo.UserExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="pojo.MessageExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from user
+    from message
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -81,60 +81,70 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="pojo.UserExample">
-    delete from user
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from message
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from message
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="pojo.MessageExample">
+    delete from message
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="pojo.User">
-    insert into user (id, Name, Password
+  <insert id="insert" parameterType="pojo.Message">
+    insert into message (ID, Record, User
       )
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}
+    values (#{id,jdbcType=INTEGER}, #{record,jdbcType=VARCHAR}, #{user,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="pojo.User">
-    insert into user
+  <insert id="insertSelective" parameterType="pojo.Message">
+    insert into message
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
-        id,
+        ID,
       </if>
-      <if test="name != null">
-        Name,
+      <if test="record != null">
+        Record,
       </if>
-      <if test="password != null">
-        Password,
+      <if test="user != null">
+        User,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
+      <if test="record != null">
+        #{record,jdbcType=VARCHAR},
       </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
+      <if test="user != null">
+        #{user,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="pojo.UserExample" resultType="java.lang.Long">
-    select count(*) from user
+  <select id="countByExample" parameterType="pojo.MessageExample" resultType="java.lang.Long">
+    select count(*) from message
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update user
+    update message
     <set>
       <if test="row.id != null">
-        id = #{row.id,jdbcType=INTEGER},
+        ID = #{row.id,jdbcType=INTEGER},
       </if>
-      <if test="row.name != null">
-        Name = #{row.name,jdbcType=VARCHAR},
+      <if test="row.record != null">
+        Record = #{row.record,jdbcType=VARCHAR},
       </if>
-      <if test="row.password != null">
-        Password = #{row.password,jdbcType=VARCHAR},
+      <if test="row.user != null">
+        User = #{row.user,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="example != null">
@@ -142,16 +152,30 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update user
-    set id = #{row.id,jdbcType=INTEGER},
-      Name = #{row.name,jdbcType=VARCHAR},
-      Password = #{row.password,jdbcType=VARCHAR}
+    update message
+    set ID = #{row.id,jdbcType=INTEGER},
+      Record = #{row.record,jdbcType=VARCHAR},
+      User = #{row.user,jdbcType=VARCHAR}
     <if test="example != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-
-  <select id="selectByName" resultMap="BaseResultMap">
-    select * from user where Name = #{username,jdbcType=VARCHAR};
-  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="pojo.Message">
+    update message
+    <set>
+      <if test="record != null">
+        Record = #{record,jdbcType=VARCHAR},
+      </if>
+      <if test="user != null">
+        User = #{user,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pojo.Message">
+    update message
+    set Record = #{record,jdbcType=VARCHAR},
+      User = #{user,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
 </mapper>

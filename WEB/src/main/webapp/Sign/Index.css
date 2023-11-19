@@ -31,16 +31,3 @@ input{
     width: 170px;
     border-radius: 5px;
 }
-.ok{
-    text-indent: 16px;
-    font-size: 10px;
-    color: red;
-    background-repeat: no-repeat;
-}
-.wrong{
-    text-indent: 16px;
-   font-size: 10px;
-    color: red;
-    background-repeat: no-repeat;
-    
-}

@@ -1,0 +1,55 @@
+body{
+    background: url('../图片/image1.jpg') center center fixed;
+    background-size: cover;
+}
+#logindiv{
+    position:absolute;
+    width:350px;
+    height:300px;
+    left:50%;
+    top:50%;
+    border-radius:10px;
+    margin-left:-175px;
+    margin-top:-150px;
+    background:white;
+    text-align: center;
+}
+#title{
+    color: darkcyan;
+
+}
+#title,
+#username,
+#password
+{
+
+    margin:10px 0;
+}
+#cw,#cw1{
+    height: 5px;
+}
+#username {
+    background-repeat: no-repeat;
+    background-position-y: center;
+    text-indent: 16px;
+    height:30px;
+    width:250px;
+    border:1px soild rgba(212, 212, 211, 0.986);
+}
+#password{
+    background-repeat: no-repeat;
+    background-position-y: center;
+    text-indent: 16px;
+    height:30px;
+    border:1px soild rgba(212, 212, 211, 0.986);
+    width:250px;
+}
+#btlogin input{
+    width:250px;
+    background-color: blue;
+    color:white;
+    letter-spacing:2px;
+    font-weight: bold;
+    height: 30px;
+    border-radius:10px;
+}
