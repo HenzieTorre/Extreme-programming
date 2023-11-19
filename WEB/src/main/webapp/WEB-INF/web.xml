@@ -16,6 +16,26 @@
         <servlet-class>Servlet.LoginServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>Message</servlet-name>
+        <servlet-class>Servlet.MessageServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>History</servlet-name>
+        <servlet-class>Servlet.HistoryServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>History</servlet-name>
+        <url-pattern>/HistoryServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Message</servlet-name>
+        <url-pattern>/Message</url-pattern>
+    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>SignIn</servlet-name>
         <url-pattern>/SignIn</url-pattern>

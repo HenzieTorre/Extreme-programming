@@ -67,6 +67,20 @@ function start() {
 
                 display.innerText = display.innerText.replace('Infinity','Error');
 
+                var xhr = new XMLHttpRequest();
+                var formData = 'equation=' + str + '&result=' + ans;
+                xhr.onreadystatechange = function () {
+                    if (this.readyState === 4) {
+                        if (this.status === 200) {
+
+                        } else {
+                            alert(this.status);
+                        }
+                    }
+                }
+                xhr.open("POST","/Login_war_exploded/Message",true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.send(formData);
 
             }
                 
@@ -144,6 +158,10 @@ function start() {
         }
     })
 }
+
+
+
+
 
 start();
 

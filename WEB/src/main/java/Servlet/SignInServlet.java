@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -21,6 +22,7 @@ public class SignInServlet extends HttpServlet {
         System.out.println(userPassword);
         SqlSession session = SqlSessionUtil.openSession();
         UserMapper mapper = session.getMapper(UserMapper.class);
+
         User user = new User();
         user.setName(userName);
         user.setPassword(userPassword);
