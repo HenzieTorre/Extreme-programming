@@ -1,4 +1,4 @@
-const btnIR = document.getElementById('IR');
+const btnIR = document.getElementById('Loan');
 
 const btnBack = document.getElementById('back');
 
